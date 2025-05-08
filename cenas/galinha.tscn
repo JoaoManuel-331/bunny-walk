@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwvb36kwxl1bo"]
+
+[ext_resource type="Texture2D" uid="uid://c71sok43u1hdv" path="res://jm/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Characters/Free Chicken Sprites.png" id="1_biwbf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_530wr"]
+atlas = ExtResource("1_biwbf")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1opb4"]
+atlas = ExtResource("1_biwbf")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3t4u7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_530wr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1opb4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bohe5"]
+size = Vector2(9, 9)
+
+[node name="galinha" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.5, -1.5)
+scale = Vector2(0.8125, 0.8125)
+sprite_frames = SubResource("SpriteFrames_3t4u7")
+autoplay = "default"
+frame_progress = 0.486513
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -1.5)
+shape = SubResource("RectangleShape2D_bohe5")
